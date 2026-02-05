@@ -4,4 +4,28 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "deepagents>=0.3.11",
+    "langchain-openai>=1.1.7",
+    "langgraph-cli[inmem]>=0.4.12",
+]
+
+[tool.ruff]
+exclude = [
+    "**/*.ipynb",
+]
+
+[tool.ruff.lint]
+# On top of the defaults (`E4`, E7`, `E9`, and `F`), enable mccabe.max-complextiy (`C901`)
+select = ["E4", "E7", "E9", "F", "C901"]
+mccabe.max-complexity = 10
+
+[tool.pyright]
+# enableReachabilityAnalysis = true
+python.analysis.include = ["tests/**"]
+venvPath = "."
+venv = ".venv"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["*"]
