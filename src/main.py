@@ -11,21 +11,18 @@ server_params = StdioServerParameters(
     args=["-y", "reddit-mcp-buddy"],
 )
 
-agent: CompiledStateGraph
-
 
 async def run_agent():
-    global agent
-    async with stdio_client(server_params) as (read, write):
-        async with ClientSession(read, write) as session:
-            # Initialize the connection
-            await session.initialize()
+    mgr = stdio_client(server_params)
+    (read, write) = await mgr.__aenter__()
+    session = await ClientSession(read, write).__aenter__()
+    # Initialize the connection
+    await session.initialize()
 
-            # Get tools
-            tools = await load_mcp_tools(session)
-            agent = create_deep_agent(
-                model="azure_openai:gpt-4o-mini-2024-07-18", tools=tools
-            )
+    # Get tools
+    tools = await load_mcp_tools(session)
+    agent = create_deep_agent(model="azure_openai:gpt-4o-mini-2024-07-18", tools=tools)
+    return agent
 
 
-asyncio.run(run_agent())
+agent = asyncio.run(run_agent())

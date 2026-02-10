@@ -37,3 +37,7 @@ Use `http://127.0.0.1:2024` as the deployment URL and `research` as the assistan
 - [Awesome MCP servers](https://github.com/punkpeye/awesome-mcp-servers)
 - [LangChain MCP adappters](https://github.com/langchain-ai/langchain-mcp-adapters)
 
+### Python Usefulness
+
+- [asyncio-task](https://docs.python.org/3/library/asyncio-task.html)
+- [with unboxing](https://peps.python.org/pep-0343/#specification-the-with-statement)
