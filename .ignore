@@ -1,0 +1,5 @@
+# Watchfiles ignore directories
+docs/
+webapp/
+.venv/
+__pycache__/
