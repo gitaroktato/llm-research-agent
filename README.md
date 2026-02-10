@@ -26,8 +26,10 @@ langgraph dev
 ```bash
 cd webapp
 yarn install
-yarn dev
+yarn dev -p 3300
 ```
+
+Your UI will be available at http://localhost:3300
 
 ### Configuring the DeepAgents UI connection
 
