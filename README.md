@@ -33,6 +33,7 @@ Use `http://127.0.0.1:2024` as the deployment URL and `research` as the assistan
 
 - [LangGraph local server](https://langchain-ai.github.io/langgraph/tutorials/langgraph-platform/local-server/#5-launch-langgraph-server)
 - [DeepAgents UI](https://github.com/langchain-ai/deep-agents-ui)
-
 - [LangChain DeepAgents](https://github.com/langchain-ai/deepagents)
+- [Awesome MCP servers](https://github.com/punkpeye/awesome-mcp-servers)
+- [LangChain MCP adappters](https://github.com/langchain-ai/langchain-mcp-adapters)
 
