@@ -8,6 +8,12 @@ A deep research agent focusing on LLM research
 
 Copy over `.env.example` to `.env` and fill in the required environment variables.
 
+### Start Langfuse tracing
+
+```bash
+docker compose up -d
+```
+
 ### Start the LangGraph server
 
 ```bash
@@ -46,3 +52,7 @@ Use `http://127.0.0.1:2024` as the deployment URL and `research` as the assistan
 
 - [asyncio-task](https://docs.python.org/3/library/asyncio-task.html)
 - [with unboxing](https://peps.python.org/pep-0343/#specification-the-with-statement)
+
+### Langfuse with DeepAgents
+
+- [langfuse-deep-agents](https://langfuse.com/integrations/frameworks/langchain-deepagents)
