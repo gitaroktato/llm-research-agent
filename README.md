@@ -37,6 +37,11 @@ Use `http://127.0.0.1:2024` as the deployment URL and `research` as the assistan
 - [Awesome MCP servers](https://github.com/punkpeye/awesome-mcp-servers)
 - [LangChain MCP adappters](https://github.com/langchain-ai/langchain-mcp-adapters)
 
+### LangGraph
+
+- [LangGraph dev](https://langchain-ai.github.io/langgraph/tutorials/langgraph-platform/local-server/#2-create-a-langgraph-app)
+- [LangGraph JSON config](https://docs.langchain.com/oss/python/langgraph/application-structure)
+
 ### Python Usefulness
 
 - [asyncio-task](https://docs.python.org/3/library/asyncio-task.html)

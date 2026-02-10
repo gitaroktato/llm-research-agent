@@ -1,9 +1,9 @@
 {
   "dependencies": [
-    "."
+    "./src"
   ],
   "graphs": {
-    "research": "./src/main.py:agent"
+    "research": "./src/main.py:make_agent"
   },
   "env": ".env"
 }
