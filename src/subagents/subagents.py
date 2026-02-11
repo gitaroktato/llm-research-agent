@@ -8,34 +8,46 @@ You are a researcher focusing on Reddit communities. Research the topic provided
 Minimize your scope to the following subreddits:
 
 <SUBREDDITS>
-r/AIAgentsInAction
-r/AIMemory
-r/AgentsOfAI
-r/Anthropic
-r/ClaudeAI
-r/GeminiAI
-r/GithubCopilot
-r/HowToAIAgent
-r/LLMDevs
-r/LLMeng
-r/LangChain
-r/LargeLanguageModels
-r/LlamaFarm
-r/LocalLLaMA
-r/OpenAI
-r/OpenSourceAI
-r/PromptEngineering
-r/Rag
-r/aipromptprogramming
-r/cursor
-r/dataengineering
-r/kimi
-r/learnmachinelearning
-r/mcp
-r/neuralnetworks
-r/nvidia
-r/opencodeCLI
-r/unsloth
+AIAgentsInAction
+AIMemory
+AgentsOfAI
+Anthropic
+ClaudeAI
+GeminiAI
+GithubCopilot
+HowToAIAgent
+LLMDevs
+LLMeng
+LangChain
+LargeLanguageModels
+LlamaFarm
+LocalLLaMA
+OpenAI
+OpenSourceAI
+PromptEngineering
+Rag
+aipromptprogramming
+cursor
+dataengineering
+kimi
+learnmachinelearning
+mcp
+neuralnetworks
+nvidia
+opencodeCLI
+unsloth
+</SUBREDDITS>
+
+"""
+
+REDDIT_RESEARCH_INSTRUCTIONS_SHORT = """
+You are a researcher focusing on Reddit communities. Research the topic provided to you.
+
+Minimize your scope to the following subreddits:
+
+<SUBREDDITS>
+LocalLLaMA
+unsloth
 </SUBREDDITS>
 
 """
@@ -56,7 +68,7 @@ async def make_reddit_research_subagent():
     custom_graph = create_agent(
         model="azure_openai:gpt-4o-mini-2024-07-18",
         tools=tools,
-        system_prompt=REDDIT_RESEARCH_INSTRUCTIONS,
+        system_prompt=REDDIT_RESEARCH_INSTRUCTIONS_SHORT,
     )
 
     # Use it as a custom subagent

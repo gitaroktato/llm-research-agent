@@ -1,6 +1,7 @@
 from langfuse import get_client
 from langfuse.langchain import CallbackHandler
 from deepagents import create_deep_agent
+from langgraph.graph.state import RunnableConfig
 
 from src.subagents import make_reddit_research_subagent
 
@@ -20,6 +21,13 @@ langfuse_handler = CallbackHandler()
 async def make_agent():
     reddit_researcher = await make_reddit_research_subagent()
     agent = create_deep_agent(
-        model="azure_openai:gpt-4o-mini-2024-07-18", subagents=[reddit_researcher]
+        model="azure_openai:gpt-4o-mini-2024-07-18",
+        subagents=[reddit_researcher],
+        system_prompt="INSTRUCTIONS: Don't use the general-purpose subagent for research!",
     )
-    return agent.with_config(config={"callbacks": [langfuse_handler]})
+    config: RunnableConfig = {"callbacks": [langfuse_handler], "recursion_limit": 50}
+    return agent.with_config(config=config)
+
+
+# TODO: Remove general-purpose.
+# TODO: Add Reddit subagent with same middlewares!
